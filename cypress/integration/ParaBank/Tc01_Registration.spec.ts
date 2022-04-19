@@ -1,0 +1,78 @@
+///<reference types="Cypress"/>
+import paraBank from "../../PageObject/Registration.page"
+  describe("Registration in ParaBank",()=>{
+     var m:any
+     beforeEach("fixture",()=>{
+       cy.fixture("example").then((users)=>{
+         m=users
+       })
+   })
+     beforeEach ("Visit the paraBank and Click on Register Link",()=>{
+      cy.visit(m.url)
+        paraBank.Register().should("be.visible")
+       })
+       it.skip("Fill the registration filed",()=>{
+           paraBank.FirstName(m.firstName)
+           paraBank.LastName(m.lastName)
+           paraBank.Addresss(m.address)
+           paraBank.City(m.city)
+           paraBank.State(m.state)
+           paraBank.Zip(m.zip)
+           paraBank.Phone(m.phone)
+           paraBank.Ssn(m.ssn)
+           paraBank.UserName(m.username)
+           paraBank.Password(m.password)
+           paraBank.confirmPass(m.password)
+           paraBank.RegButton()
+           paraBank.Sucess().should("be.visible")
+      })
+    it.skip("When user will registration with same userName but different firstName",()=>{
+        paraBank.FirstName(m.firstName1)
+        paraBank.LastName(m.lastName)
+        paraBank.Addresss(m.address)
+        paraBank.City(m.city)
+        paraBank.State(m.state)
+        paraBank.Zip(m.zip)
+        paraBank.Phone(m.phone)
+        paraBank.Ssn(m.ssn)
+        paraBank.UserName(m.username)
+        paraBank.Password(m.password)
+        paraBank.confirmPass(m.password)
+        paraBank.RegButton()
+        paraBank.userNameCheck().should("be.visible")
+      })
+      it.skip("User will register without enter any field should register",()=>{
+        paraBank.RegButton()
+        cy.get('.form2').should("eq","First name is required.")
+      })
+      it.skip("If user will enter same password in Registration",()=>{
+        paraBank.FirstName(m.firstName)
+        paraBank.LastName(m.lastName)
+        paraBank.Addresss(m.address)
+        paraBank.City(m.city)
+        paraBank.State(m.state)
+        paraBank.Zip(m.zip)
+        paraBank.Phone(m.phone)
+        paraBank.Ssn(m.ssn)
+        paraBank.UserName(m.username)
+        paraBank.Password(m.password1)
+        paraBank.confirmPass(m.password)
+        paraBank.RegButton()
+        paraBank.differentPassword().should("be.visible")
+      })
+      it.only("User will Registration without phone number sucessfully",()=>{
+        paraBank.FirstName(m.firstName)
+        paraBank.LastName(m.lastName)
+        paraBank.Addresss(m.address)
+        paraBank.City(m.city)
+        paraBank.State(m.state)
+        paraBank.Zip(m.zip)
+        paraBank.Ssn(m.ssn)
+        paraBank.UserName(m.username)
+        paraBank.Password(m.password)
+        paraBank.confirmPass(m.password)
+        paraBank.RegButton()
+        paraBank.Sucess().should("be.visible")
+      })
+  })
+  

@@ -1,0 +1,18 @@
+{
+  "url":"https://parabank.parasoft.com/parabank/index.htm",
+  "name": "Using fixtures to represent data",
+  "email": "hello@cypress.io",
+  "body": "Fixtures are a great way to mock data for responses to routes",
+  "firstName":"Alex",
+  "firstName1":"Alex",
+  "lastName":"Lilly",
+  "address":"New york",
+  "city":"America",
+  "state":"Hillex",
+  "zip":"66678",
+  "phone":"999877766",
+  "ssn":"8888",
+  "username":"mk777",
+  "password":"mk777",
+  "password1":"haider123"
+}
