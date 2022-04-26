@@ -3,14 +3,14 @@ const customerPassword='[type="password"]'
 const submitButton = "[type='submit']"
 
 class login{
-    customerUserName(value:any){
-         return cy.get(customerName).type(value)
+    customerUserName(){
+         return cy.get(customerName)
     }
-    customerUserPassword(value:any){
-        return cy.get(customerPassword).type(value)
+    customerUserPassword(){
+        return cy.get(customerPassword)
    }
    loginButton(){
-       return cy.get(submitButton).click()
+       return cy.get(submitButton)
    }
 }
 export default new login

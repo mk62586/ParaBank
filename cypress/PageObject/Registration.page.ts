@@ -17,43 +17,43 @@ const successfully ='#rightPanel'
 
 class ParaBank{
  Register(){
-    return  cy.get(regesterLink).contains("Register").click()
+    return  cy.get(regesterLink).contains("Register")
 }
-  FirstName(value:any){
-      return cy.get(Firstname).type(value)
+  FirstName(){
+      return cy.get(Firstname)
  }
-  LastName(value:any){
-      return cy.get(lastname).type(value)
+  LastName(){
+      return cy.get(lastname)
 }
-  Addresss(value:any){
-      return cy.get(address).type(value)
+  Addresss(){
+      return cy.get(address)
 }
-  City(value:any){
-    return cy.get(city).type(value)
+  City(){
+    return cy.get(city)
 }
-State(value:any){
-    return cy.get(state).type(value)
+State(){
+    return cy.get(state)
 }
-Zip(value:any){
-    return cy.get(zip).type(value)
+Zip(){
+    return cy.get(zip)
 }
-Phone(value:any){
-    return cy.get(phone).type(value)
+Phone(){
+    return cy.get(phone)
 }
-Ssn(value:any){
-    return cy.get(ssn).type(value)
+Ssn(){
+    return cy.get(ssn)
 }
-UserName(value:any){
-    return cy.get(username).type(value)
+UserName(){
+    return cy.get(username)
 }
-Password(value:any){
-    return cy.get(password).type(value)
+Password(){
+    return cy.get(password)
 }
-confirmPass(value:any){
-    return cy.get(confirmPass).type(value)
+confirmPass(){
+    return cy.get(confirmPass)
 }
 RegButton(){
-    return cy.get(regButton).contains("Register").click()
+    return cy.get(regButton).contains("Register")
  }
 Sucess(){
     return cy.get(successfully).contains("alex1238")

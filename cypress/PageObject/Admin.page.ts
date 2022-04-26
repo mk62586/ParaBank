@@ -20,7 +20,7 @@ const provider :String[] = ["JMS","Local","Web Service"]
 
 class Admin{
 adminPage(){
-  return cy.get(adminLink).contains("Admin Page").click()
+  return cy.get(adminLink).contains("Admin Page")
  }
  titlePage(){
   return cy.title()
@@ -31,33 +31,40 @@ administration(){
    cy.get(rightPanel).contains("Web Service")
  }
 modeSoap(){
-  return  cy.get(soap).click()
+  return  cy.get(soap)
 } 
 modeRest(){
-  return  cy.get(restXml).click()
+  return  cy.get(restXml)
 } 
 modeRestJson(){
- return  cy.get(restJSON).click()
+ return  cy.get(restJSON)
 } 
 modeJDBC(){
- return  cy.get(jdbc).click()
+ return  cy.get(jdbc)
  } 
-aapSetting(){
- return cy.get(initBal).clear().type("10000",{delay:100}),
-        cy.get(minBal).clear().type("100",{delay:100}),
-        cy.get(loan).select("Web Service"),
-        cy.get(loanProc).select("Down Payment"),
-        cy.get(threehold).clear().type("60",{delay:100}),
-        cy.get(submit).click(),
-        cy.get(rightPanel).contains("Settings saved successfully.")
+  initBal(){
+ return cy.get(initBal)
   }
-cleanAapSetting(){
-  return cy.get(initBal).clear().type("10000",{delay:100}),
-         cy.get(minBal).clear().type("100",{delay:100}),
-         cy.get(loan).select("Web Service"),
-         cy.get(loanProc).select("Down Payment"),
-         cy.get(threehold).clear().type("60",{delay:100}),
-         cy.get(clearp).click()
+  minBal(){
+       return cy.get(minBal)
+  }
+  loan(){
+       return cy.get(loan)
+  }
+  downPayment(){
+       return cy.get(loanProc)
+  }
+  threehold(){
+       return cy.get(threehold)
+  }
+  submit(){
+      return  cy.get(submit)
+  }
+  rightPanel(){
+     return   cy.get(rightPanel).contains("Settings saved successfully.")
+  }
+  clean(){
+    return  cy.get(clearp)
   }
 }
 export default new Admin

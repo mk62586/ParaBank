@@ -10,7 +10,7 @@ const message = '#message'
 const button = "[value='Send to Customer Care']"
 class Home{
     homeMenu(){
-        return cy.get(home).click()
+        return cy.get(home)
     }
     titlePage(){
         return cy.title()
@@ -20,27 +20,27 @@ class Home{
                cy.get(rightPanel).contains("Online Services")
     }
    aboutUs(){
-        return cy.get(aboutUs).click(),
+        return cy.get(aboutUs),
         cy.get(rightPanel).contains("ParaSoft Demo Website")
    }
    mail(){
-       return cy.get(Mail).click(),
+       return cy.get(Mail),
        cy.get(rightPanel).contains('Customer Care')
    }
-   emailName(value:any){
-       return cy.get(name).type(value)
+   emailName(){
+       return cy.get(name)
    }
-   emailEmail(value:any){
-    return cy.get(email).type(value)
+   emailEmail(){
+    return cy.get(email)
   }
-  emailPhone(value:any){
-    return cy.get(phone).type(value)
+  emailPhone(){
+    return cy.get(phone)
   }
-  emailMessage(value:any){
-    return cy.get(message).type(value)
+  emailMessage(){
+    return cy.get(message)
   }
   emailButton(){
-    return cy.get(button).click()
+    return cy.get(button)
   }
   verfiyResult(){
       return cy.get(rightPanel).contains("A Customer Care Representative will be contacting you")

@@ -10,8 +10,11 @@ describe("login",()=>{
   })
   it("login",()=>{
     cy.visit(m.url)
-    login.customerUserName(m.username)
-    login.customerUserPassword(m.password)
-    login.loginButton()
+    login.customerUserName().type(m.username)
+    login.customerUserPassword().type(m.password)
+    login.loginButton().click()
   })
+  it("visual test case of login",()=>{
+    cy.document().toMatchImageSnapshot();
+})
 })
